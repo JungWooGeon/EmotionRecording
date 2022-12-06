@@ -88,20 +88,15 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:orientation="horizontal">
-
                             <CheckBox
                                 android:id="@+id/checkbox1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                android:text="기쁨"/>
 
-                            <TextView
-                                android:id="@+id/textView1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="9"
-                                android:text="기쁨" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -123,20 +118,15 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:orientation="horizontal">
 
                             <CheckBox
                                 android:id="@+id/checkbox2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="슬픔"
                                 android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="9"
-                                android:text="슬픔" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -156,20 +146,16 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:orientation="horizontal">
 
                             <CheckBox
                                 android:id="@+id/checkbox3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="화남"
                                 android:layout_weight="1" />
 
-                            <TextView
-                                android:id="@+id/textView3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="9"
-                                android:text="화남" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -197,20 +183,16 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:orientation="horizontal">
 
                             <CheckBox
                                 android:id="@+id/checkbox4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="설램"
                                 android:layout_weight="1" />
 
-                            <TextView
-                                android:id="@+id/textView4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="9"
-                                android:text="설램" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -231,20 +213,16 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:orientation="horizontal">
 
                             <CheckBox
                                 android:id="@+id/checkbox5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="신남"
                                 android:layout_weight="1" />
 
-                            <TextView
-                                android:id="@+id/textView5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="9"
-                                android:text="신남" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -264,27 +242,23 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:orientation="horizontal">
 
                             <CheckBox
                                 android:id="@+id/checkbox6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="짜증"
                                 android:layout_weight="1" />
 
-                            <TextView
-                                android:id="@+id/textView6"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="9"
-                                android:text="짜증" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/record_activity_toggle"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginVertical="10dp"
