@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.example.softwareengineering.databinding.ActivityMainBinding;
+import com.example.softwareengineering.record.RecordActivity;
 
 /**
  * 메인 첫 화면으로 감정을 기록의 첫 시작을 할 수 있는 화면
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            Intent intent = new Intent(getApplicationContext(), RecordActivity.class);
+            Intent intent = new Intent(this, RecordActivity.class);
             intent.putExtra(getText(R.string.emotionId).toString(), emotionId);
             intent.putExtra(getString(R.string.emotionTitle), title);
 

@@ -7,13 +7,13 @@
 
         <variable
             name="activity"
-            type="com.example.softwareengineering.RecordActivity" />
+            type="com.example.softwareengineering.record.RecordActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RecordActivity">
+        tools:context=".record.RecordActivity">
 
         <View
             android:id="@+id/view"
@@ -65,7 +65,7 @@
                     android:textSize="100sp" />
 
                 <TextView
-                    android:id="@+id/EmotionName"
+                    android:id="@+id/emotionName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
