@@ -48,4 +48,19 @@
     <string name="next">Next</string>
     <string name="weather_english">Weather</string>
     <string name="back">Back</string>
+    <string name="emotionId">emotionId</string>
+    <string name="customEmotionImage">customEmotionImage</string>
+    <string name="customEmotionTitle">customEmotionTitle</string>
+    <string name="customEmotionDescription">customEmotionDescription</string>
+    <string name="similarEmotion">similarEmotion</string>
+    <string name="recordEmotionSharedPreferencesKey">recordEmotion</string>
+    <string name="emotionTitle">emotionTitle</string>
+    <string name="default_emotion">default</string>
+    <string name="custom_emotion">custom</string>
+    <string name="emotionType">emotionType</string>
+    <string name="emotionImage">emotionImage</string>
+    <string name="emotionName">emotionName</string>
+    <string name="keyword1">keyword1</string>
+    <string name="keyword2">keyword2</string>
+    <string name="emotionDescriptionEditText">emotionDescriptionEditText</string>
 </resources>
