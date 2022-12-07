@@ -1,12 +1,18 @@
 package com.example.softwareengineering;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private CheckBox cb1;
@@ -15,10 +21,14 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox cb4;
     private CheckBox cb5;
     private CheckBox cb6;
+
     private Button record_activity_toggle;
     private LinearLayout emotion_add_layout;
     private boolean isToggle = true;
 
+    private TextView add_emotion_button;
+
+    private Button next_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +55,38 @@ public class MainActivity extends AppCompatActivity {
                     emotion_add_layout.setVisibility(View.GONE);
                     isToggle = true;
                 }
+            }
+        });
+
+        add_emotion_button = (TextView) findViewById(R.id.imageView7);
+        add_emotion_button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+
+                AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
+                dlg.setTitle("이모티콘을 선택해주세요"); //제목
+                final String[] versionArray = new String[] {"\uD83D\uDE00","\uD83D\uDE04","\uD83D\uDE02","\uD83D\uDE07","\uD83D\uDE09","\uD83D\uDE0D","\uD83D\uDE2A"};
+
+                dlg.setSingleChoiceItems(versionArray, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        add_emotion_button.setText(versionArray[which]);
+                    }
+                });
+                dlg.setPositiveButton("확인",new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,"이모티콘을 선택하셨습니다.",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dlg.show();
+            }
+        });
+
+        next_button = (Button) findViewById(R.id.next_button);
+        next_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),record2.class);
+                startActivity(intent);
             }
         });
 
