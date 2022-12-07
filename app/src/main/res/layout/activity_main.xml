@@ -1,410 +1,427 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <View
-        android:id="@+id/view"
+    <data>
+
+        <variable
+            name="activity"
+            type="com.example.softwareengineering.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="감정 기록중..."
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
-
-        <LinearLayout
+        <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="2dp"
+            android:background="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.08" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recording.."
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view">
 
             <LinearLayout
-                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/view"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintTop_toBottomOf="@+id/view">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/imageView1"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:textSize="80dp"
-                            android:textColor="#FF000000"
-                            android:textAlignment="center"
-                            android:layout_gravity="center"
-                            android:text="😄" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-                            <CheckBox
-                                android:id="@+id/checkbox1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="기쁨"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/imageView2"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center"
-                            android:textSize="80dp"
-                            android:textColor="#FF000000"
-                            android:textAlignment="center"
-                            android:text="😢" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkbox2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="슬픔"
-                                android:layout_weight="1" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/imageView3"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center"
-                            android:textSize="80dp"
-                            android:textColor="#FF000000"
-                            android:textAlignment="center"
-                            android:text="😠" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkbox3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="화남"
-                                android:layout_weight="1" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center"
-                            android:textSize="80dp"
-                            android:textColor="#FF000000"
-                            android:textAlignment="center"
-                            android:text="🤭" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkbox4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="설램"
-                                android:layout_weight="1" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/imageView5"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center"
-                            android:textSize="80dp"
-                            android:textColor="#FF000000"
-                            android:textAlignment="center"
-                            android:text="🤩" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkbox5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="신남"
-                                android:layout_weight="1" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/imageView6"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center"
-                            android:textSize="80dp"
-                            android:textColor="#FF000000"
-                            android:textAlignment="center"
-                            android:text="😠" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkbox6"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="짜증"
-                                android:layout_weight="1" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/record_activity_toggle"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="10dp"
-                android:text="▼" />
-
-            <LinearLayout
-                android:id="@+id/emotion_add_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical">
-
-                <LinearLayout
+                    android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/view"
+                    app:layout_constraintVertical_bias="0.0">
 
-                    <TextView
-                        android:id="@+id/imageView7"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="+"
-                        android:textSize="100dp"
-                        android:layout_margin="10dp"
-                        android:textColor="#FF000000"
-                        android:textAlignment="center" />
-
-                    <EditText
-                        android:id="@+id/addEmotionName"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:hint="감정을 입력해주세요"
-                        android:inputType="textPersonName" />
+                        android:layout_marginVertical="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/imageView1"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:text="@string/grinning_face_with_smiling_eyes"
+                                android:textAlignment="center"
+                                android:textColor="#FF000000"
+                                android:textSize="80sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkbox1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/pleasure" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/imageView2"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:text="@string/crying_face"
+                                android:textAlignment="center"
+                                android:textColor="#FF000000"
+                                android:textSize="80sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkbox2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/sadness" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/imageView3"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:text="@string/enraged_face"
+                                android:textAlignment="center"
+                                android:textColor="#FF000000"
+                                android:textSize="80sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkbox3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/aggro" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginVertical="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/imageView4"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:text="@string/face_with_hand_over_mouth"
+                                android:textAlignment="center"
+                                android:textColor="#FF000000"
+                                android:textSize="80sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkbox4"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/flutter" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/imageView5"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:text="@string/star_struck"
+                                android:textAlignment="center"
+                                android:textColor="#FF000000"
+                                android:textSize="80sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkbox5"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/excited" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/imageView6"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:text="@string/angry_face"
+                                android:textAlignment="center"
+                                android:textColor="#FF000000"
+                                android:textSize="80sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkbox6"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/annoyance" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editTextTextPersonName"
+                <Button
+                    android:id="@+id/record_activity_toggle_button"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:ems="10"
-                    android:hint="감정에 대한 설명을 작성해주세요"
-                    android:inputType="textPersonName"
-                    android:maxLines="5" />
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:text="@string/down_arrow" />
 
-                <TextView
-                    android:id="@+id/textView2"
+                <LinearLayout
+                    android:id="@+id/emotion_add_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:textSize="20dp"
-                    android:text="유사한 감정을 선택해주세요" />
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-                <RadioGroup
-                    android:id="@+id/closest_emotion"
-                    android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/add_emotion_button"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:text="@string/plus"
+                            android:textAlignment="center"
+                            android:textColor="#FF000000"
+                            android:textSize="100sp" />
+
+                        <EditText
+                            android:id="@+id/addEmotionName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/input_emotion"
+                            android:inputType="textPersonName" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/editTextTextPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:ems="10"
+                        android:hint="@string/write_emotion_detail"
+                        android:inputType="textPersonName"
+                        android:maxLines="5" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:text="@string/select_a_similar_emotion"
+                        android:textSize="20sp" />
+
+                    <RadioGroup
+                        android:id="@+id/closest_emotion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp">
+
+                        <RadioButton
+                            android:id="@+id/radioButton1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pleasure" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sadness" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/aggro" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/flutter" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/excited" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/annoyance" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp">
+                    android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/radioButton1"
-                        android:layout_width="match_parent"
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:text="기쁨" />
+                        android:layout_gravity="start"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/home" />
 
-                    <RadioButton
-                        android:id="@+id/radioButton2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="슬픔" />
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
 
-                    <RadioButton
-                        android:id="@+id/radioButton3"
-                        android:layout_width="match_parent"
+                    <Button
+                        android:id="@+id/next_button"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:text="화남" />
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/next" />
 
-                    <RadioButton
-                        android:id="@+id/radioButton4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="설램" />
+                </LinearLayout>
 
-                    <RadioButton
-                        android:id="@+id/radioButton5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="신남" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="짜증" />
-                </RadioGroup>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+        </ScrollView>
 
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="10dp"
-                    android:text="Home" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:id="@+id/next_button"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1"
-                    android:layout_marginRight="10dp"
-                    android:text="Next" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,29 +1,25 @@
 package com.example.softwareengineering;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
+import com.example.softwareengineering.databinding.ActivityRecordBinding;
 
 public class RecordActivity extends AppCompatActivity {
-
-    private Button next_button;
+    private ActivityRecordBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_record);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_record);
+        binding.setActivity(this);
 
-        next_button = (Button) findViewById(R.id.next_button);
-        next_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), StatisticsActivity.class);
-                startActivity(intent);
-            }
+        binding.nextButton.setOnClickListener(view -> {
+            Intent intent=new Intent(getApplicationContext(), StatisticsActivity.class);
+            startActivity(intent);
         });
-
     }
 }
