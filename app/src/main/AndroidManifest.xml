@@ -23,7 +23,7 @@
             android:name=".record.RecordActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".select.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

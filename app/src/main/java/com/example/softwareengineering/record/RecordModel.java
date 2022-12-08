@@ -8,7 +8,12 @@ import com.example.softwareengineering.emotion_database.EmotionDataBase;
 import com.example.softwareengineering.emotion_database.EmotionInfo;
 import com.example.softwareengineering.R;
 
+/**
+ * RecordViewModel 과 연결된 Model
+ */
 public class RecordModel {
+    
+    // 감정 기록을 할 때 필요한 정보들
     private int emotionId = 0;
     private String emotionTitle = "";
     private String customEmotionImage = "";

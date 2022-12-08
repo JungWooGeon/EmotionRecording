@@ -9,10 +9,14 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.softwareengineering.R;
 
+/**
+ * RecordActivity 와 연결된 ViewModel
+ */
 public class RecordActivityViewModel extends ViewModel {
 
     private RecordModel model;
 
+    // 감정 기록 시 필요한 정보들
     private final MutableLiveData<String> emotionImage = new MutableLiveData<>();
     private final MutableLiveData<String> emotionName = new MutableLiveData<>();
 
@@ -34,9 +38,7 @@ public class RecordActivityViewModel extends ViewModel {
         }
     }
 
-    /**
-     * 기본 감정일 때, 감정 이모티콘 이미지 셋팅
-     */
+    // 기본 감정일 때, 감정 이모티콘 이미지 셋팅
     private void setEmotionImage(int emotionId, Resources r) {
         switch (emotionId) {
             case 1:

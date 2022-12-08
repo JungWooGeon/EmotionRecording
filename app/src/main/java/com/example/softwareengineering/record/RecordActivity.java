@@ -11,6 +11,9 @@ import com.example.softwareengineering.R;
 import com.example.softwareengineering.StatisticsActivity;
 import com.example.softwareengineering.databinding.ActivityRecordBinding;
 
+/**
+ * 감정을 DB에 기록할 수 있는 화면 -> 날씨 화면으로 전환 가능
+ */
 public class RecordActivity extends AppCompatActivity {
 
     private ActivityRecordBinding binding;
@@ -32,7 +35,7 @@ public class RecordActivity extends AppCompatActivity {
     }
 
     private void initButton() {
-         // 'Next' 버튼을 누르면 SharedPrefrences 에 데이터 저장 후 activity 전환
+         // 'Next' 버튼을 누르면 DB 에 데이터 저장 후 activity 전환
         binding.nextButton.setOnClickListener(view -> {
             viewModel.setDB(this, binding.emotionImage.getText().toString(),
                     binding.keywordEditText1.getText().toString(),
