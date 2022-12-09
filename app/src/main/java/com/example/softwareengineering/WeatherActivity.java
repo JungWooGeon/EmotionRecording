@@ -16,5 +16,7 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_weather);
         binding.setActivity(this);
+
+        binding.backButton.setOnClickListener(v -> finish());
     }
 }

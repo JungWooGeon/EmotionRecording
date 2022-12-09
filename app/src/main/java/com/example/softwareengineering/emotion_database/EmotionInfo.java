@@ -16,6 +16,9 @@ public class EmotionInfo {
     @ColumnInfo (name = "keyword2") String keyword2;
     @ColumnInfo (name = "emotionDescriptionEditText") String emotionDescriptionEditText;
 
+    public String getEmotionType() { return emotionType; }
+    public String getEmotionName() { return emotionName; }
+
     public EmotionInfo(String emotionType, String emotionImage, String emotionName, String customEmotionDescription,
                        String similarEmotion, String keyword1, String keyword2, String emotionDescriptionEditText) {
         this.emotionType = emotionType;

@@ -7,13 +7,13 @@
 
         <variable
             name="activity"
-            type="com.example.softwareengineering.StatisticsActivity" />
+            type="com.example.softwareengineering.statistics.StatisticsActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".StatisticsActivity">
+        tools:context=".statistics.StatisticsActivity">
 
         <View
             android:id="@+id/view"
@@ -60,8 +60,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <View
-                    android:id="@+id/view3"
+                <com.github.mikephil.charting.charts.RadarChart
+                    android:id="@+id/radarChart"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_margin="5dp" />
@@ -107,7 +107,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
-                                android:id="@+id/textView1"
+                                android:id="@+id/statisticsContent1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="15"
@@ -132,7 +132,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
-                                android:id="@+id/textView2"
+                                android:id="@+id/statisticsContent2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="15"
@@ -156,7 +156,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
-                                android:id="@+id/textView3"
+                                android:id="@+id/statisticsContent3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="15"
@@ -181,7 +181,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
-                                android:id="@+id/textView4"
+                                android:id="@+id/statisticsContent4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="15"

@@ -11,7 +11,7 @@ public abstract class EmotionDataBase extends RoomDatabase {
     public abstract EmotionInfoDao emotionInfoDao();
 
     private static EmotionDataBase database;
-    private static String DATABASE_NAME = "emotionInfo";
+    private static final String DATABASE_NAME = "emotionInfo";
 
     public synchronized static EmotionDataBase getInstance(Context context)
     {

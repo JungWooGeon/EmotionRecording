@@ -12,9 +12,9 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.example.softwareengineering.R;
+import com.example.softwareengineering.statistics.StatisticsActivity;
 import com.example.softwareengineering.databinding.ActivityMainBinding;
 import com.example.softwareengineering.record.RecordActivity;
-import com.example.softwareengineering.record.RecordActivityViewModel;
 
 import java.util.Objects;
 
@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         binding.setActivity(this);
 
         cb_array = new CheckBox[]{binding.checkbox1, binding.checkbox2, binding.checkbox3, binding.checkbox4, binding.checkbox5, binding.checkbox6};
-
 
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
         viewModel.init(getResources());
@@ -90,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
 
         // 비슷한 감정 선택 부분 기본 설정 (처음 라디오 버튼이 자동 선택되어있도록 함)
         binding.closestEmotion.check(binding.radioButton1.getId());
+
+        // "Home" 버튼 클릭 시
+        binding.homeButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, StatisticsActivity.class);
+            startActivity(intent);
+        });
     }
 
     // checkbox 가 최대 한 개만 선택 가능하도록 설정

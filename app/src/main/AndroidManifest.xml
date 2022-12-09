@@ -17,7 +17,7 @@
             android:name=".WeatherActivity"
             android:exported="false" />
         <activity
-            android:name=".StatisticsActivity"
+            android:name=".statistics.StatisticsActivity"
             android:exported="false" />
         <activity
             android:name=".record.RecordActivity"

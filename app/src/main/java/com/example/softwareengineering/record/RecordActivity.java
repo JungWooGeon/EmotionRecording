@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.softwareengineering.R;
-import com.example.softwareengineering.StatisticsActivity;
+import com.example.softwareengineering.statistics.StatisticsActivity;
 import com.example.softwareengineering.databinding.ActivityRecordBinding;
 
 /**
@@ -32,6 +33,13 @@ public class RecordActivity extends AppCompatActivity {
         viewModel.getEmotionName().observe(this, emotionName -> binding.emotionName.setText(emotionName));
 
         initButton();
+    }
+
+    // 이미 감정 설정 완료 시
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 
     private void initButton() {
