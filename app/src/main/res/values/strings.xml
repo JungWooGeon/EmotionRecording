@@ -6,6 +6,7 @@
     <string name="plus">+</string>
     <string name="bullet">•</string>
     <string name="bullet_space">• </string>
+    <string name="percent">%</string>
 
     <string name="grinning_face_emoji">😀</string>
     <string name="grinning_face_with_big_eyes">😄</string>
@@ -44,6 +45,7 @@
     <string name="weather_statement">날씨 상태</string>
     <string name="recording..">감정 기록중...</string>
     <string name="priority">우선순위</string>
+    <string name="times">회</string>
 
     <string name="home">Home</string>
     <string name="next">Next</string>
