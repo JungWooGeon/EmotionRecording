@@ -21,6 +21,9 @@
     <string name="face_with_hand_over_mouth">🤭</string>
     <string name="star_struck">🤩</string>
     <string name="enraged_face">😡</string>
+    <string name="sunny">☀</string>
+    <string name="rain">☔</string>
+    <string name="cloud">☁</string>
 
     <string name="select_emotion">이모티콘을 선택해주세요</string>
     <string name="complete_select_emotion">이모티콘을 선택하셨습니다.</string>
@@ -67,4 +70,8 @@
     <string name="keyword2">keyword2</string>
     <string name="emotionDescriptionEditText">emotionDescriptionEditText</string>
     <string name="emotions">emotions</string>
+    <string name="content1">content1</string>
+    <string name="content2">content2</string>
+    <string name="content3">content3</string>
+    <string name="content4">content4</string>
 </resources>

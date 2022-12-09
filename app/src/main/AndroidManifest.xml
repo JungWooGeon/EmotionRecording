@@ -14,7 +14,7 @@
         android:theme="@style/Theme.SoftwareEngineering"
         tools:targetApi="31">
         <activity
-            android:name=".WeatherActivity"
+            android:name=".weather.WeatherActivity"
             android:exported="false" />
         <activity
             android:name=".statistics.StatisticsActivity"

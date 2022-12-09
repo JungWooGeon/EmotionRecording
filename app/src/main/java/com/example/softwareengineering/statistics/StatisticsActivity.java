@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.example.softwareengineering.R;
-import com.example.softwareengineering.WeatherActivity;
+import com.example.softwareengineering.weather.WeatherActivity;
 import com.example.softwareengineering.databinding.ActivityStatisticsBinding;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
@@ -64,6 +64,10 @@ public class StatisticsActivity extends AppCompatActivity {
 
         binding.nextButton.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), WeatherActivity.class);
+            intent.putExtra(getText(R.string.content1).toString(), binding.statisticsContent1.getText());
+            intent.putExtra(getText(R.string.content2).toString(), binding.statisticsContent2.getText());
+            intent.putExtra(getText(R.string.content3).toString(), binding.statisticsContent3.getText());
+            intent.putExtra(getText(R.string.content4).toString(), binding.statisticsContent4.getText());
             startActivity(intent);
         });
 

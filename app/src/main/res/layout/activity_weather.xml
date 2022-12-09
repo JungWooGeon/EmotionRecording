@@ -7,13 +7,13 @@
 
         <variable
             name="activity"
-            type="com.example.softwareengineering.WeatherActivity" />
+            type="com.example.softwareengineering.weather.WeatherActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".WeatherActivity">
+        tools:context=".weather.WeatherActivity">
 
         <View
             android:id="@+id/view"
@@ -46,20 +46,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view">
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:text=""
-                android:textSize="20sp" />
 
-            <View
-                android:id="@+id/view5"
+            <TextView
+                android:id="@+id/weatherEmotion"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_margin="5dp" />
+                android:layout_margin="5dp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="80sp"
+                android:autoSizeMaxTextSize="200sp"
+                android:gravity="center" />
 
             <View
                 android:id="@+id/view4"
@@ -103,11 +99,10 @@
                             android:textSize="20sp" />
 
                         <TextView
-                            android:id="@+id/textView1"
+                            android:id="@+id/statisticsContentTextView1"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="15"
-                            android:text="통계내용1..."
                             android:textSize="15sp" />
 
                     </LinearLayout>
@@ -128,11 +123,10 @@
                             android:textSize="20sp" />
 
                         <TextView
-                            android:id="@+id/textView2"
+                            android:id="@+id/statisticsContentTextView2"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="15"
-                            android:text="통계내용2..."
                             android:textSize="15sp" />
 
                     </LinearLayout>
@@ -152,11 +146,10 @@
                             android:textSize="20sp" />
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/statisticsContentTextView3"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="15"
-                            android:text="통계내용3..."
                             android:textSize="15sp" />
 
                     </LinearLayout>
@@ -177,11 +170,10 @@
                             android:textSize="20sp" />
 
                         <TextView
-                            android:id="@+id/textView4"
+                            android:id="@+id/statisticsContentTextView4"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="15"
-                            android:text="통계내용4..."
                             android:textSize="15sp" />
 
                     </LinearLayout>
