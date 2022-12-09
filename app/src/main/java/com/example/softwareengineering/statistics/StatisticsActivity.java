@@ -16,6 +16,9 @@ import com.example.softwareengineering.databinding.ActivityStatisticsBinding;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 
+/**
+ * 기록된 감정을 확인하여 통계 차트로 확인할 수 있는 화면
+ */
 public class StatisticsActivity extends AppCompatActivity {
 
     private StatisticsActivityViewModel viewModel;
@@ -62,6 +65,7 @@ public class StatisticsActivity extends AppCompatActivity {
             }
         });
 
+        // "Next (weather)" 버튼 클릭 시 날씨 화면으로 이동 (통계 내용 정보 같이 전달)
         binding.nextButton.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), WeatherActivity.class);
             intent.putExtra(getText(R.string.content1).toString(), binding.statisticsContent1.getText());

@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import com.example.softwareengineering.R;
 
 /**
- * MainViewModel 과 연결된 Model
+ * MainActivityViewModel 과 연결된 Model
  * title, versionArray 정보는 ViewModel 과 같음
  */
 public class MainModel {
@@ -21,6 +21,7 @@ public class MainModel {
                 r.getText(R.string.winking_face).toString(), r.getText(R.string.smiling_face_with_heart_eyes).toString(), r.getText(R.string.sleepy_face).toString()};
     }
 
+    // 메인화면 기본 감정 선택 부분에서 체크되어 있는 부분을 확인하여 알맞은 제목 설정
     public int checkSelectedCheckbox(boolean[] isChecked, Resources r) {
         int checkId = 0;
 

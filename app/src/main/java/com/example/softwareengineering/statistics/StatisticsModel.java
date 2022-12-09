@@ -23,10 +23,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * StatisticsActivityViewModel 과 연결된 Model
+ */
 public class StatisticsModel {
 
+    // 감정들의 점수를 기록한 List
     private final List<Score> scoreList = new ArrayList<>();
+    
+    // 통계 차트에 정보를 적용할 때, String[] 형태의 라벨 정보가 필요하여 사용
     private String[] labels;
+
+    // 차트를 만들 때 필요한 정보를 만들어 저장
     private RadarData radarData;
     private PieData pieData;
     private BarData barData;
@@ -38,6 +46,7 @@ public class StatisticsModel {
     public BarData getBarData() { return barData; }
 
     public void calculateScore(Context context) {
+        //@TODO 다른 class 에서도 사용되므로 refactoring 시, enum class 등을 사용하는 것이 좋을 것 같음 (상수 처리)
         final String PLEASURE = "기쁨";
         final String SADNESS = "슬픔";
         final String AGGRO = "화남";
@@ -45,6 +54,7 @@ public class StatisticsModel {
         final String EXCITED = "신남";
         final String ANNOYANCE = "짜증";
 
+        // default 감정에 대해 저장할 정보 초기화
         Score pleasureScore = new Score(PLEASURE, 0);
         Score sadnessScore = new Score(SADNESS, 0);
         Score aggroScore = new Score(AGGRO, 0);
@@ -52,7 +62,7 @@ public class StatisticsModel {
         Score excitedScore = new Score(EXCITED, 0);
         Score annoyanceScore = new Score(ANNOYANCE, 0);
 
-        // DB에서 탐색
+        // DB 에서 탐색 후 감정 점수 등록
         List<EmotionInfo> infos = EmotionDataBase.getInstance(context).emotionInfoDao().getAll();
         for (int i = 0; i < infos.size(); i++) {
             if (infos.get(i).getEmotionType().contentEquals(context.getText(R.string.default_emotion))) {
@@ -81,6 +91,7 @@ public class StatisticsModel {
             }
         }
 
+        // 감정 점수 목록에 값을 넣어준 후 정렬 진행 (차트 내용에서 상위 4개의 목록만 사용하기 때문)
         scoreList.clear();
         scoreList.add(pleasureScore);
         scoreList.add(sadnessScore);
@@ -91,6 +102,7 @@ public class StatisticsModel {
 
         Collections.sort(scoreList);
 
+        // 통계 차트 DataSet update (각 차트에 맞게 속성 설정)
         updateRadarSet(context);
         updatePieSet(context);
         updateBarSet(context);

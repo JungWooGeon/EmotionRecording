@@ -35,10 +35,12 @@ public class RecordActivity extends AppCompatActivity {
         initButton();
     }
 
-    // 이미 감정 설정 완료 시
     @Override
     protected void onPause() {
         super.onPause();
+        // 이 화면 위로 다른 화면이 띄워지면 화면을 종료
+        // 1) "Next" 버튼 클릭 시 : 감정 등록 완료 -> 이 화면으로 다시 돌아올 필요 없음
+        // 2) 뒤로가기 클릭 시 : 감정 등록 취소 -> 액티비티 종료
         finish();
     }
 

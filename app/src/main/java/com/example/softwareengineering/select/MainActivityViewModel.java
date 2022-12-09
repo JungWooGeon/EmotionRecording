@@ -33,6 +33,7 @@ public class MainActivityViewModel extends ViewModel {
         versionArray.setValue(model.getVersionArray());
     }
 
+    // 메인화면 기본 감정 선택 부분에서 체크되어 있는 부분을 확인하여 알맞은 제목 설정
     public void checkSelectedCheckbox(boolean[] isChecked, Resources r) {
         checkId = model.checkSelectedCheckbox(isChecked, r);
         title.setValue(model.getTitle());

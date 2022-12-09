@@ -9,7 +9,7 @@ import com.example.softwareengineering.emotion_database.EmotionInfo;
 import com.example.softwareengineering.R;
 
 /**
- * RecordViewModel 과 연결된 Model
+ * RecordActivityViewModel 과 연결된 Model
  */
 public class RecordModel {
     
