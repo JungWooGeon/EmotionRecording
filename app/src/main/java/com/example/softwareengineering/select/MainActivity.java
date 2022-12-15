@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +16,6 @@ import com.example.softwareengineering.R;
 import com.example.softwareengineering.statistics.StatisticsActivity;
 import com.example.softwareengineering.databinding.ActivityMainBinding;
 import com.example.softwareengineering.record.RecordActivity;
-
-import java.util.Objects;
 
 /**
  * 메인 첫 화면으로 감정을 기록의 첫 시작을 할 수 있는 화면
@@ -31,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MainActivityViewModel viewModel;
+
+    private String customSimilarEmotion = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         viewModel.initVersionArray();
     }
 
+    @SuppressLint("NonConstantResourceId")
     private void initButton() {
         // toggle 버튼 기능 구현 (custom 감정 기록 부분 보이기, 숨기기)
         binding.recordActivityToggleButton.setOnClickListener(view -> {
@@ -95,6 +97,29 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, StatisticsActivity.class);
             startActivity(intent);
         });
+
+        binding.closestEmotion.setOnCheckedChangeListener((group, checkedId) -> {
+            switch(checkedId) {
+                case R.id.radioButton1:
+                    customSimilarEmotion = getText(R.string.pleasure).toString();
+                    break;
+                case R.id.radioButton2:
+                    customSimilarEmotion = getText(R.string.sadness).toString();
+                    break;
+                case R.id.radioButton3:
+                    customSimilarEmotion = getText(R.string.aggro).toString();
+                    break;
+                case R.id.radioButton4:
+                    customSimilarEmotion = getText(R.string.flutter).toString();
+                    break;
+                case R.id.radioButton5:
+                    customSimilarEmotion = getText(R.string.excited).toString();
+                    break;
+                case R.id.radioButton6:
+                    customSimilarEmotion = getText(R.string.annoyance).toString();
+                    break;
+            }
+        });
     }
 
     // checkbox 가 최대 한 개만 선택 가능하도록 설정
@@ -110,31 +135,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // 커스텀 감정 선택 -> 유사한 감정 선택에서 RadioButton 부분 선택한 버튼 확인, 위에서부터 0 ~ 5 로 return
-    private int checkSelectedRadioButton() {
-        if (binding.radioButton1.isChecked()) {
-            return 0;
-        } else if (binding.radioButton2.isChecked()) {
-            return 1;
-        } else if (binding.radioButton3.isChecked()) {
-            return 2;
-        } else if (binding.radioButton4.isChecked()) {
-            return 3;
-        } else if (binding.radioButton5.isChecked()) {
-            return 4;
-        } else if (binding.radioButton6.isChecked()) {
-            return 5;
-        } else {
-            return -1;
-        }
-    }
-
     // Intent 로 정보들을 담아서 RecordActivity 로 전환
     private void startRecordActivity(String title) {
         String customEmotionImage = binding.addEmotionButton.getText().toString();
         String customEmotionTitle = binding.addEmotionName.getText().toString();
         String customEmotionDescription = binding.editTextTextPersonName.getText().toString();
-        String similarEmotion = Objects.requireNonNull(viewModel.getVersionArray().getValue())[checkSelectedRadioButton()];
 
         if (viewModel.getCheckId() == 0 && (customEmotionTitle.equals("") || customEmotionImage.equals(getText(R.string.plus)))) {
             // 감정 1~6 중 선택되지 않고, 커스텀 감정 제목이나 이미지가 기록되지 않았을 때
@@ -149,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(getText(R.string.customEmotionImage).toString(), customEmotionImage);
         intent.putExtra(getText(R.string.customEmotionTitle).toString(), customEmotionTitle);
         intent.putExtra(getText(R.string.customEmotionDescription).toString(), customEmotionDescription);
-        intent.putExtra(getText(R.string.similarEmotion).toString(), similarEmotion);
+        intent.putExtra(getText(R.string.similarEmotion).toString(), customSimilarEmotion);
         startActivity(intent);
     }
 }

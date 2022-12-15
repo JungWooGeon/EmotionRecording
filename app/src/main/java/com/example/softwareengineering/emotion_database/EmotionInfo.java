@@ -18,6 +18,7 @@ public class EmotionInfo {
 
     public String getEmotionType() { return emotionType; }
     public String getEmotionName() { return emotionName; }
+    public String getSimilarEmotion() { return similarEmotion; }
 
     public EmotionInfo(String emotionType, String emotionImage, String emotionName, String customEmotionDescription,
                        String similarEmotion, String keyword1, String keyword2, String emotionDescriptionEditText) {

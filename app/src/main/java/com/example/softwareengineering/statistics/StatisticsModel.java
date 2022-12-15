@@ -28,6 +28,22 @@ import java.util.List;
  */
 public class StatisticsModel {
 
+    //@TODO 다른 class 에서도 사용되므로 refactoring 시, enum class 등을 사용하는 것이 좋음 (상수 처리)
+    private final String PLEASURE = "기쁨";
+    private final String SADNESS = "슬픔";
+    private final String AGGRO = "화남";
+    private final String FLUTTER = "설렘";
+    private final String EXCITED = "신남";
+    private final String ANNOYANCE = "짜증";
+
+    // default 감정에 대해 저장할 정보 초기화
+    private final Score pleasureScore = new Score(PLEASURE, 0);
+    private final Score sadnessScore = new Score(SADNESS, 0);
+    private final Score aggroScore = new Score(AGGRO, 0);
+    private final Score flutterScore = new Score(FLUTTER, 0);
+    private final Score excitedScore = new Score(EXCITED, 0);
+    private final Score annoyanceScore = new Score(ANNOYANCE, 0);
+
     // 감정들의 점수를 기록한 List
     private final List<Score> scoreList = new ArrayList<>();
     
@@ -46,48 +62,13 @@ public class StatisticsModel {
     public BarData getBarData() { return barData; }
 
     public void calculateScore(Context context) {
-        //@TODO 다른 class 에서도 사용되므로 refactoring 시, enum class 등을 사용하는 것이 좋을 것 같음 (상수 처리)
-        final String PLEASURE = "기쁨";
-        final String SADNESS = "슬픔";
-        final String AGGRO = "화남";
-        final String FLUTTER = "설렘";
-        final String EXCITED = "신남";
-        final String ANNOYANCE = "짜증";
-
-        // default 감정에 대해 저장할 정보 초기화
-        Score pleasureScore = new Score(PLEASURE, 0);
-        Score sadnessScore = new Score(SADNESS, 0);
-        Score aggroScore = new Score(AGGRO, 0);
-        Score flutterScore = new Score(FLUTTER, 0);
-        Score excitedScore = new Score(EXCITED, 0);
-        Score annoyanceScore = new Score(ANNOYANCE, 0);
-
         // DB 에서 탐색 후 감정 점수 등록
         List<EmotionInfo> infos = EmotionDataBase.getInstance(context).emotionInfoDao().getAll();
         for (int i = 0; i < infos.size(); i++) {
             if (infos.get(i).getEmotionType().contentEquals(context.getText(R.string.default_emotion))) {
-                switch (infos.get(i).getEmotionName()) {
-                    case PLEASURE:
-                        pleasureScore.addScore();
-                        break;
-                    case SADNESS:
-                        sadnessScore.addScore();
-                        break;
-                    case AGGRO:
-                        aggroScore.addScore();
-                        break;
-                    case FLUTTER:
-                        flutterScore.addScore();
-                        break;
-                    case EXCITED:
-                        excitedScore.addScore();
-                        break;
-                    case ANNOYANCE:
-                        annoyanceScore.addScore();
-                        break;
-                    default:
-                        break;
-                }
+                calculateEmotion(infos.get(i).getEmotionName());
+            } else if (infos.get(i).getEmotionType().contentEquals(context.getText(R.string.custom_emotion))) {
+                calculateEmotion(infos.get(i).getSimilarEmotion());
             }
         }
 
@@ -183,5 +164,30 @@ public class StatisticsModel {
         });
 
         barData = new BarData(barDataSet);
+    }
+
+    private void calculateEmotion(String emotion) {
+        switch (emotion) {
+            case PLEASURE:
+                pleasureScore.addScore();
+                break;
+            case SADNESS:
+                sadnessScore.addScore();
+                break;
+            case AGGRO:
+                aggroScore.addScore();
+                break;
+            case FLUTTER:
+                flutterScore.addScore();
+                break;
+            case EXCITED:
+                excitedScore.addScore();
+                break;
+            case ANNOYANCE:
+                annoyanceScore.addScore();
+                break;
+            default:
+                break;
+        }
     }
 }
