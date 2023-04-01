@@ -28,9 +28,3 @@
 <img src="https://user-images.githubusercontent.com/61993128/218752220-f9d6f1e0-243b-4bf9-8b6c-f29e7d45bd93.PNG" width="300" height="522"/> <img src="https://user-images.githubusercontent.com/61993128/218752232-a71a1416-7b81-4552-89f9-e82352fbf7d8.PNG" width="300" height="522"/>
 <img src="https://user-images.githubusercontent.com/61993128/218752253-1315ec37-b497-4740-9135-974788ef02f7.PNG" width="300" height="522"/> <img src="https://user-images.githubusercontent.com/61993128/218752280-647bc4c3-10b3-4faf-84d8-cbf190e630d3.PNG" width="300" height="522"/>
 <img src="https://user-images.githubusercontent.com/61993128/218752305-ae6567f8-5735-442e-8651-b4d96a417955.PNG" width="300" height="522"/> <img src="https://user-images.githubusercontent.com/61993128/218752268-a775ed0e-5844-4d43-a758-baf260db9ed5.PNG" width="300" height="522"/>
-
-<br><br>
-
-### 📃 Learned
- - 차트 오픈 소스를 사용하여 차트를 구현해 보았음
- - Room DB를 사용하여 간단한 DataBase를 구현하고 관리해 볼 수 있었음
